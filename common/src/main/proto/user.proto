@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.sunny.grpc;
+
+option java_package = "com.sunny.grpc";
+
+option java_multiple_files = true;
+
+service user {
+  rpc login(Request) returns (Response) {
+  };
+}
+
+message Request {
+  string username = 1;
+  string password = 2;
+}
+
+message Response {
+  int32 statusCode = 1;
+  string statusDescription = 2;
+}
